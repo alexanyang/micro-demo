@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package api.account;
+
+option go_package = "userhome/api/account;account";
+option java_multiple_files = true;
+option java_package = "api.account";
+
+service Account {
+    rpc CreateAccount (CreateAccountRequest) returns (CreateAccountReply);
+    rpc UpdateAccount (UpdateAccountRequest) returns (UpdateAccountReply);
+    rpc DeleteAccount (DeleteAccountRequest) returns (DeleteAccountReply);
+    rpc GetAccount (GetAccountRequest) returns (GetAccountReply);
+    rpc ListAccount (ListAccountRequest) returns (ListAccountReply);
+}
+
+message CreateAccountRequest {
+  string name = 1;
+  string phone = 2;
+  string pasaword = 3;
+}
+message CreateAccountReply {
+  int64 code = 1;
+  string msg = 2;
+  
+}
+
+message UpdateAccountRequest {}
+message UpdateAccountReply {}
+
+message DeleteAccountRequest {}
+message DeleteAccountReply {}
+
+message GetAccountRequest {}
+message GetAccountReply {}
+
+message ListAccountRequest {}
+message ListAccountReply {}
